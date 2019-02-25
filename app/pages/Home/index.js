@@ -13,18 +13,27 @@ export default class Login extends Component {
         header: null
     }
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            userName:this.props.navigation.state.params.userName,
+            tel:this.props.navigation.state.params.tel,
+        };
+
+    }
+
     render() {
+        let {userName,tel} = this.state;
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>
                     Welcome to Home!
                 </Text>
                 <Text style={styles.instructions}>
-                    To get started, edit index.android.js
+                    {userName}
                 </Text>
                 <Text style={styles.instructions}>
-                    Double tap R on your keyboard to reload,{'\n'}
-                    Shake or press menu button for dev menu
+                    {tel}
                 </Text>
             </View>
         );
